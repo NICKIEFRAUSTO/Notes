@@ -1,17 +1,15 @@
 const express = require("express");
 const path = require("path");
-
 const app = express();
-const PORT = 3000;
+const fs = require("fs");
+const PORT = process.env.PORT || 3000;
 
-const notes = [
-  {
-    title: "Stop by Whole Foods",
-    text: "pick up almond milk, and eggs",
-  },
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-  {
-    title: "Kids dinner",
-    text: "the kids want pizza for dinner tonight",
-  },
-];
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
+
+app.listen(PORT, () => {
+  console.log(`App listening on PORT: ${PORT}`);
+});
