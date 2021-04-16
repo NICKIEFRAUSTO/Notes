@@ -15,6 +15,12 @@
 
 The Note Taker App allows you to create, view, save and delete notes
 
+# Links
+
+https://git.heroku.com/agile-forest-92469.git
+
+https://github.com/NICKIEFRAUSTO/Notes.git
+
 # Installation
 
 To install the project run node server.js
